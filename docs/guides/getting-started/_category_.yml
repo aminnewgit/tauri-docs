@@ -1,4 +1,4 @@
-label: 'Getting Started'
+label: 'Getting Started 快速开始'
 position: 2
 customProps:
-  description: Begin developing your first Tauri app
+  description: Begin developing your first Tauri app  开始开发你的第一个Turi app

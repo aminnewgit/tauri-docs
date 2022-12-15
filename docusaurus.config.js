@@ -26,7 +26,7 @@ const awesomeTauriUrl = 'https://github.com/tauri-apps/awesome-tauri'
 
 const navbarItems = [
   {
-    label: 'Guides',
+    label: 'Guides(指南)',
     type: 'docSidebar',
     sidebarId: 'guides',
   },
@@ -56,7 +56,7 @@ const navbarItems = [
     ],
   },
   {
-    label: 'References',
+    label: 'References(参考)',
     type: 'docSidebar',
     sidebarId: 'references',
   },
@@ -67,7 +67,7 @@ const navbarItems = [
     position: 'left',
   },
   {
-    label: 'Community',
+    label: 'Community(社区)',
     position: 'left',
     items: [
       {
@@ -265,11 +265,11 @@ async function siteConfig() {
         items: navbarItems,
       },
 
-      footer: {
-        style: 'dark',
-        links: footerLinks,
-        copyright: `Copyright © ${new Date().getFullYear()} Tauri Contributors. CC-BY / MIT`,
-      },
+      // footer: {
+      //   style: 'dark',
+      //   links: footerLinks,
+      //   copyright: `Copyright © ${new Date().getFullYear()} Tauri Contributors. CC-BY / MIT`,
+      // },
     },
 
     presets: [
@@ -285,12 +285,15 @@ async function siteConfig() {
             editUrl: ({ docPath, versionDocsDirPath }) => {
               if (docPath === 'api/cli.md') {
                 return 'https://github.com/tauri-apps/tauri/tree/dev/tooling/cli/src'
-              } else if (docPath === 'api/config.md') {
+              }
+              else if (docPath === 'api/config.md') {
                 return 'https://github.com/tauri-apps/tauri/edit/dev/core/tauri-utils/src/config.rs'
-              } else if (docPath.startsWith('api/js')) {
+              }
+              else if (docPath.startsWith('api/js')) {
                 const mod = docPath.split('/').at(-1).split('.')[0]
                 return `https://github.com/tauri-apps/tauri/edit/dev/tooling/api/src/${mod}.ts`
-              } else {
+              }
+              else {
                 return `https://github.com/tauri-apps/tauri-docs/edit/dev/${versionDocsDirPath}/${docPath}`
               }
             },

@@ -1,6 +1,11 @@
-# Making Your Own CLI
+# 制作自己的CLI
+Making Your Own CLI
 
-Tauri enables your app to have a CLI through [clap](https://github.com/clap-rs/clap), a robust command line argument parser. With a simple CLI definition in your `tauri.conf.json` file, you can define your interface and read its argument matches map on JavaScript and/or Rust.
+Tauri通过[clap]使您的应用程序具有CLI，一个健壮的命令行参数解析器。在 `tauri.conf.json` 文件中做一个简单的CLI定义，就可以定义你自己接口，并在JavaScript或Rust上读取其参数匹配映射。  
+Tauri enables your app to have a CLI through [clap](https://github.com/clap-rs/clap), 
+a robust command line argument parser. 
+With a simple CLI definition in your `tauri.conf.json` file,
+you can define your interface and read its argument matches map on JavaScript and/or Rust.
 
 ## Base Configuration
 

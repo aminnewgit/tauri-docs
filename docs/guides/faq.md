@@ -1,8 +1,10 @@
 ---
-title: Frequently Asked Questions
+title: 常见问题解答
 sidebar_position: 10
 description: Fixes for common issues
 ---
+
+Frequently Asked Questions
 
 ## How can I use unpublished Tauri changes?
 

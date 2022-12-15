@@ -2,13 +2,17 @@ import React, { useEffect, useState } from 'react'
 import classNames from 'classnames'
 import styles from './index.module.css'
 import Layout from '@theme/Layout'
+// import Layout from '@docusaurus/core/lib/client/theme-fallback/Layout'
+
 import Link from '@docusaurus/Link'
 import { useColorMode } from '@docusaurus/theme-common'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import useBaseUrl from '@docusaurus/useBaseUrl'
 import { useLatestVersion } from '@docusaurus/plugin-content-docs/client'
 import Translate, { translate } from '@docusaurus/Translate'
-import { CreateTauriApp } from '@theme/Command'
+
+import { CreateTauriApp } from '../theme/Command.js'
+// import { CreateTauriApp } from '@theme/Command'
 
 // See translations for label and description
 
@@ -447,26 +451,23 @@ export default function App() {
   const context = useDocusaurusContext()
   const latestVersion = useLatestVersion()
 
+  let desc = {
+    message: 'Tauri is a framework for building tiny, blazing fast ' +
+    'binaries for all major desktop platforms. Developers can integrate ' +
+    'any front-end framework that compiles to HTML, JS and CSS for building' +
+    ' their user interface.',
+  }
+
   return (
     <Layout
       title={`${context.siteConfig.tagline}`}
-      description={translate({
-        message:
-          'Tauri is a framework for building tiny, blazing fast binaries for all major desktop platforms. Developers can integrate any front-end framework that compiles to HTML, JS and CSS for building their user interface.',
-      })}
-    >
+      description={translate(desc)}>
       <header className={classNames('hero', styles.hero)}>
         <div className={classNames(styles.heroBefore)}>
           <div className={classNames(styles.loopsContainer)}>
-            <img
-              className={classNames(styles.heroLoops)}
-              src="/img/index/blue_loops.svg"
-            />
+            <img className={classNames(styles.heroLoops)} src="/img/index/blue_loops.svg" />
           </div>
-          <img
-            className={classNames(styles.heroPackage)}
-            src="/img/index/orange_package.svg"
-          />
+          <img className={classNames(styles.heroPackage)} src="/img/index/orange_package.svg" />
         </div>
         <div className={classNames(styles.heroContainer)}>
           <p className={classNames(styles.heroSubtitle, 'hero__subtitle')}>
@@ -486,10 +487,8 @@ export default function App() {
             <CreateTauriApp />
           </div>
 
-          <Link
-            className={classNames('button button--secondary button--lg')}
-            to={latestVersion.path + '/guides/getting-started/setup'}
-          >
+          <Link className={classNames('button button--secondary button--lg')}
+                to={latestVersion.path + '/guides/getting-started/setup'} >
             <Translate>Quick Start</Translate>
           </Link>
         </div>

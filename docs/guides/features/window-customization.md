@@ -1,4 +1,5 @@
-# Window Customization
+# 窗口自定义 
+Window Customization
 
 Tauri provides lots of options for customizing the look and feel of your app's window. You can create custom titlebars, have transparent windows, enforce size constraints, and more.
 

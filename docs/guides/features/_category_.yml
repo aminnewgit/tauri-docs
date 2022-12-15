@@ -1,4 +1,4 @@
-label: Features
+label: Features(功能)
 position: 9
 customProps:
-  description: Learn how to use common Tauri features
+  description: Learn how to use common Tauri features 了解如何使用常见的Tauri功能

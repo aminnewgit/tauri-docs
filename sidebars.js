@@ -1,7 +1,7 @@
 const guides = [
   {
     type: 'category',
-    label: 'Guides',
+    label: 'Guides(指南)',
     link: { type: 'doc', id: 'guides/readme' },
     items: [
       {
