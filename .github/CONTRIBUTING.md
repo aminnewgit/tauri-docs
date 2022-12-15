@@ -3,18 +3,22 @@
 ## Writing/Fixing Docs
 
 Feel free to open an issue/a PR if you find something wrong in the docs.
+如果您在文档中发现问题，请随时打开一个issue或PR。
 
 Once you have submitted your PR, GitHub automatically builds the site and deploys a temporary preview to Netlify.
-
+提交PR后，GitHub会自动构建站点并向Netlify部署临时预览。
 ## Style
 
 A few style guidelines to help us keep a common style across documents:
+很少有样式准则可以帮助我们在文档中保持通用样式
 
-1. Use [Reference-style Links]. This makes reading the raw markdown and updating links easier.
-2. Prefer plain markdown over HTML/MDX. This makes reading the markdown easier.
-3. Use present tense rather than future tense. This makes the text easier to comprehend.
+1. Use [Reference-style Links]. This makes reading the raw markdown and updating links easier.  
+   使用 [Reference-style Links] (就是这种方括号的连接形式,在markdown最底部定义连接), 这使得阅读原始markdown和更新链接更容易
+2. Prefer plain markdown over HTML/MDX. This makes reading the markdown easier.    
+   与HTML/MDX相比，更喜欢markdown。这使得阅读标记更容易
+4. Use present tense rather than future tense. This makes the text easier to comprehend.
    Make an exception for planned or obsolete features, using future or past tense as appropriate.
-4. Use active voice rather than passive voice. This makes the text more engaging and easier to comprehend.
+5. Use active voice rather than passive voice. This makes the text more engaging and easier to comprehend.
 
 ## Local Development
 
