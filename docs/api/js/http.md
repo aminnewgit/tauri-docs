@@ -1,10 +1,16 @@
 # http
 
-Access the HTTP client written in Rust.
+Access the HTTP client written in Rust.  
+访问用Rust编写的HTTP客户端。
 
 This package is also accessible with `window.__TAURI__.http` when [`build.withGlobalTauri`](https://tauri.app/v1/api/config/#buildconfig.withglobaltauri) in `tauri.conf.json` is set to `true`.
 
+当`tauri.conf.json`->`build.withGlobalTauri` 设置为True时也可通过`window.__TAURI__`访问。
+
+
 The APIs must be allowlisted on `tauri.conf.json`:
+需要在`tauri.conf.json`的allowlist中添加授权
+
 ```json
 {
   "tauri": {
@@ -17,13 +23,18 @@ The APIs must be allowlisted on `tauri.conf.json`:
   }
 }
 ```
-It is recommended to allowlist only the APIs you use for optimal bundle size and security.
+It is recommended to allowlist only the APIs you use for optimal bundle size and security.  
+推荐只允许你使用的API, 这样可以优化安全性和整体程序大小
 
 ## Security
 
-This API has a scope configuration that forces you to restrict the URLs and paths that can be accessed using glob patterns.
+This API has a scope configuration that forces you to restrict(限制) 
+the URLs and paths that can be accessed using glob patterns.  
+此API有一个作用域配置，强制您限制可以使用glob模式访问的URL和路径。
 
-For instance, this scope configuration only allows making HTTP requests to the GitHub API for the `tauri-apps` organization:
+For instance, this scope configuration only allows making HTTP requests to the GitHub API for the `tauri-apps` organization:  
+例如，此范围配置仅允许向“tauri apps”的GitHub API发出HTTP请求：
+
 ```json
 {
   "tauri": {
@@ -36,8 +47,9 @@ For instance, this scope configuration only allows making HTTP requests to the G
 }
 ```
 Trying to execute any API with a URL not configured on the scope results in a promise rejection due to denied access.
+尝试使用未在作用域上配置的URL执行任何API都会由于拒绝访问而导致拒绝承诺。
 
-## Enumerations
+## Enumerations (枚举)
 
 ### `ResponseType`
 

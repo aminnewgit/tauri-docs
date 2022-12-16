@@ -4,9 +4,15 @@ Calling Rust from the frontend
 Tauri provides a simple yet powerful `command` system for calling Rust functions from your web app.
 Commands can accept arguments and return values. They can also return errors and be `async`.
 
-## Basic Example
 
-Commands are defined in your `src-tauri/src/main.rs` file. To create a command, just add a function and annotate it with `#[tauri::command]`:
+Tauri提供了一个简单而强大的“命令”系统，用于从web应用程序调用Rust函数。
+命令可以接受参数和返回值。它们也可以返回错误，并且是“异步”的。
+
+## Basic Example (简单例子)
+
+Commands are defined in your `src-tauri/src/main.rs` file. 
+To create a command, just add a function and annotate it with `#[tauri::command]`:  
+`src-tauri/src/main.rs`文件中添加一个函数并用“#[tauri:：command]”对其进行注释,就可以定义一个命令：
 
 ```rust
 #[tauri::command]
@@ -15,7 +21,8 @@ fn my_custom_command() {
 }
 ```
 
-You will have to provide a list of your commands to the builder function like so:
+You will have to provide a list of your commands to the builder function like so:  
+您必须向生builder函数提供命令列表，如下所示：
 
 ```rust
 // Also in main.rs
@@ -41,9 +48,10 @@ const invoke = window.__TAURI__.invoke
 invoke('my_custom_command')
 ```
 
-## Passing Arguments
+## Passing Arguments (传递参数)
 
-Your command handlers can take arguments:
+Your command handlers can take arguments:  
+命令处理程序可以接受参数：
 
 ```rust
 #[tauri::command]
@@ -52,7 +60,8 @@ fn my_custom_command(invoke_message: String) {
 }
 ```
 
-Arguments should be passed as a JSON object with camelCase keys:
+Arguments should be passed as a JSON object with camelCase keys:  
+参数应作为带有camelCase(驼峰命名)键的JSON对象传递：
 
 ```js
 invoke('my_custom_command', { invokeMessage: 'Hello!' })
@@ -62,7 +71,8 @@ Arguments can be of any type, as long as they implement [`serde::Deserialize`].
 
 ## Returning Data
 
-Command handlers can return data as well:
+Command handlers can return data as well:   
+命令处理函数同样可以返回数据
 
 ```rust
 #[tauri::command]
@@ -77,7 +87,8 @@ The `invoke` function returns a promise that resolves with the returned value:
 invoke('my_custom_command').then((message) => console.log(message))
 ```
 
-Returned data can be of any type, as long as it implements [`serde::Serialize`].
+Returned data can be of any type, as long as it implements [`serde::Serialize`].  
+返回的数据可以是任何类型，只要它实现了 [`serde::Serialize`] 。
 
 ## Error Handling
 
@@ -101,16 +112,19 @@ invoke('my_custom_command')
   .catch((error) => console.error(error))
 ```
 
-## Async Commands
+## Async Commands(异步命令)
 
 :::note
 
-Async commands are executed on a separate thread using [`async_runtime::spawn`].
-Commands without the _async_ keyword are executed on the main thread unless defined with _#[tauri::command(async)]_.
+Async commands are executed on a separate thread using [`async_runtime::spawn`].  
+异步命令使用 [`Async_runtime::spawn`] 在单独的线程上执行。  
+Commands without the _async_ keyword are executed on the main thread unless defined with _#[tauri::command(async)]_.  
+不带_async_关键字的命令在主线程上执行，除非用 _#[tauri::command（async）]_ 定义。
 
 :::
 
-If your command needs to run asynchronously, simply declare it as `async`:
+If your command needs to run asynchronously, simply declare it as `async`:  
+如果命令需要异步运行，只需将其声明为`async`：
 
 ```rust
 #[tauri::command]
@@ -121,15 +135,16 @@ async fn my_custom_command() {
 }
 ```
 
-Since invoking the command from JS already returns a promise, it works just like any other command:
-
+Since invoking the command from JS already returns a promise, it works just like any other command:  
+由于从JS调用命令已经返回了一个promise，因此它的工作方式与其他命令一样：
 ```js
 invoke('my_custom_command').then(() => console.log('Completed!'))
 ```
 
-## Accessing the Window in Commands
+## Accessing the Window in Commands(在命令中访问窗口)
 
-Commands can access the `Window` instance that invoked the message:
+Commands can access the `Window` instance that invoked the message:  
+命令可以访问调用消息的Window实例：
 
 ```rust
 #[tauri::command]
@@ -139,6 +154,7 @@ async fn my_custom_command(window: tauri::Window) {
 ```
 
 ## Accessing an AppHandle in Commands
+在命令中访问AppHandle
 
 Commands can access an `AppHandle` instance:
 
@@ -152,6 +168,7 @@ async fn my_custom_command(app_handle: tauri::AppHandle) {
 ```
 
 ## Accessing managed state
+访问托管状态
 
 Tauri can manage state using the `manage` function on `tauri::Builder`.
 The state can be accessed on a command using `tauri::State`:
@@ -174,6 +191,7 @@ fn main() {
 ```
 
 ## Creating Multiple Commands
+创建多个命令
 
 The `tauri::generate_handler!` macro takes an array of commands. To register
 multiple commands, you cannot call invoke_handler multiple times. Only the last

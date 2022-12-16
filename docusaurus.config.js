@@ -115,12 +115,12 @@ const navbarItems = [
       },
     ],
   },
-  {
-    label: 'Releases',
-    to: 'releases',
-    position: 'right',
-    className: 'navbarIcon releasesIcon',
-  },
+  // {
+  //   label: 'Releases',
+  //   to: 'releases',
+  //   position: 'right',
+  //   className: 'navbarIcon releasesIcon',
+  // },
   {
     label: 'GitHub',
     href: repoUrl,
@@ -129,99 +129,99 @@ const navbarItems = [
     className: 'navbarIcon gitHubIcon',
     target: '_self',
   },
-  {
-    type: 'localeDropdown',
-    position: 'right',
-    dropdownItemsAfter: [
-      {
-        to: 'https://tauri.crowdin.com/documentation',
-        label: 'Help us translate',
-      },
-    ],
-  },
+  // {
+  //   type: 'localeDropdown',
+  //   position: 'right',
+  //   dropdownItemsAfter: [
+  //     {
+  //       to: 'https://tauri.crowdin.com/documentation',
+  //       label: 'Help us translate',
+  //     },
+  //   ],
+  // },
 ]
 
-const footerLinks = [
-  {
-    title: 'Repositories',
-    items: [
-      {
-        label: 'Tauri',
-        href: repoUrl,
-        target: '_self',
-      },
-      {
-        label: 'TAO',
-        href: 'https://github.com/tauri-apps/tao',
-        target: '_self',
-      },
-      {
-        label: 'WRY',
-        href: 'https://github.com/tauri-apps/wry',
-        target: '_self',
-      },
-    ],
-  },
-  {
-    title: 'Contact',
-    items: [
-      {
-        label: 'Mail',
-        href: 'mailto:contact@tauri.app',
-        target: '_self',
-      },
-      {
-        label: 'Twitter',
-        href: 'https://twitter.com/TauriApps',
-        target: '_self',
-      },
-      {
-        label: 'Mastodon',
-        href: 'https://fosstodon.org/@TauriApps',
-        rel: 'me',
-        target: '_self',
-      },
-    ],
-  },
-  {
-    title: 'Network',
-    items: [
-      {
-        label: 'Blog',
-        to: 'blog',
-      },
-      {
-        label: 'OpenCollective',
-        href: 'https://opencollective.com/tauri',
-        target: '_self',
-      },
-      {
-        label: 'GitHub',
-        href: 'https://github.com/tauri-apps',
-        target: '_self',
-      },
-    ],
-  },
-  {
-    title: 'Community',
-    items: [
-      {
-        label: 'Sponsors',
-        to: '/#sponsors',
-      },
-      {
-        label: 'Discord',
-        href: discordUrl,
-        target: '_self',
-      },
-      {
-        label: 'Awesome Tauri',
-        href: awesomeTauriUrl,
-        target: '_self',
-      },
-    ],
-  },
-]
+// const footerLinks = [
+//   {
+//     title: 'Repositories',
+//     items: [
+//       {
+//         label: 'Tauri',
+//         href: repoUrl,
+//         target: '_self',
+//       },
+//       {
+//         label: 'TAO',
+//         href: 'https://github.com/tauri-apps/tao',
+//         target: '_self',
+//       },
+//       {
+//         label: 'WRY',
+//         href: 'https://github.com/tauri-apps/wry',
+//         target: '_self',
+//       },
+//     ],
+//   },
+//   {
+//     title: 'Contact',
+//     items: [
+//       {
+//         label: 'Mail',
+//         href: 'mailto:contact@tauri.app',
+//         target: '_self',
+//       },
+//       {
+//         label: 'Twitter',
+//         href: 'https://twitter.com/TauriApps',
+//         target: '_self',
+//       },
+//       {
+//         label: 'Mastodon',
+//         href: 'https://fosstodon.org/@TauriApps',
+//         rel: 'me',
+//         target: '_self',
+//       },
+//     ],
+//   },
+//   {
+//     title: 'Network',
+//     items: [
+//       {
+//         label: 'Blog',
+//         to: 'blog',
+//       },
+//       {
+//         label: 'OpenCollective',
+//         href: 'https://opencollective.com/tauri',
+//         target: '_self',
+//       },
+//       {
+//         label: 'GitHub',
+//         href: 'https://github.com/tauri-apps',
+//         target: '_self',
+//       },
+//     ],
+//   },
+//   {
+//     title: 'Community',
+//     items: [
+//       {
+//         label: 'Sponsors',
+//         to: '/#sponsors',
+//       },
+//       {
+//         label: 'Discord',
+//         href: discordUrl,
+//         target: '_self',
+//       },
+//       {
+//         label: 'Awesome Tauri',
+//         href: awesomeTauriUrl,
+//         target: '_self',
+//       },
+//     ],
+//   },
+// ]
 
 async function siteConfig() {
   const mdxMermaid = await import('mdx-mermaid')
