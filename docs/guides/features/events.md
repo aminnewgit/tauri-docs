@@ -5,6 +5,15 @@ It is analogous to the command system, but a payload type check must be written 
 
 A Tauri application can listen and emit global and window-specific events. Usage from the frontend and the backend is described below.
 
+Tauri事件系统是一个多生产者多消费者通信原语，允许在前端和后端之间传递消息。
+它类似于命令系统，但必须在事件处理程序上写入有效负载类型检查，
+它简化了从后端到前端的通信，就像通道一样工作。
+
+
+
+Tauri应用程序可以监听和发出全局和窗口特定的事件。前端和后端的使用情况如下所述。
+
+
 ## Frontend
 
 The event system is accessible on the frontend on the `event` and `window` modules of the `@tauri-apps/api` package.

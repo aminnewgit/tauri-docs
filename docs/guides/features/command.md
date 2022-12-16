@@ -193,10 +193,16 @@ fn main() {
 ## Creating Multiple Commands
 创建多个命令
 
-The `tauri::generate_handler!` macro takes an array of commands. To register
-multiple commands, you cannot call invoke_handler multiple times. Only the last
-call will be used. You must pass each command to a single call of
-`tauri::generate_handler!`.
+The `tauri::generate_handler!` macro takes an array of commands. 
+To register multiple commands, you cannot call invoke_handler multiple times. 
+Only the last call will be used.
+You must pass each command to a single call of `tauri::generate_handler!`.
+
+`tauri::generate_handler!`宏接受一系列命令。
+要注册多个命令，不能多次调用invoke_handler。
+只有最后一次调用有用。您必须将每个命令传递给 `tauri::generate_handler!` 的单次调用。
+
+
 
 ```rust
 #[tauri::command]
@@ -216,9 +222,10 @@ fn main() {
 }
 ```
 
-## Complete Example
+## Complete Example 完整例子
 
-Any or all of the above features can be combined:
+Any or all of the above features can be combined:  
+上述任何或所有功能均可组合：
 
 ```rust main.rs
 
